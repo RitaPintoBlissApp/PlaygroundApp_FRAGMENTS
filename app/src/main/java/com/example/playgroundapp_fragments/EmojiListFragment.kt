@@ -3,16 +3,16 @@ package com.example.playgroundapp_fragments
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.playgroundapp_fragments.databinding.FragmentAvatarListBinding
 import com.example.playgroundapp_fragments.databinding.FragmentEmojiListBinding
 import java.util.Random
 
 
+@Suppress("DEPRECATION")
 class EmojiListFragment : Fragment() {
 
     private  var _binding: FragmentEmojiListBinding? =  null
@@ -24,11 +24,11 @@ class EmojiListFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+        savedInstanceState: Bundle?
+    ): View {
 
         _binding = FragmentEmojiListBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
 
     }
 
@@ -46,7 +46,7 @@ class EmojiListFragment : Fragment() {
 
         binding.rvEmoji.adapter = adapter
 
-        binding.swipeRefreshLayout.setOnClickListener {
+        binding.swipeRefreshLayout.setOnRefreshListener {
             refreshEmojiList()
         }
 
