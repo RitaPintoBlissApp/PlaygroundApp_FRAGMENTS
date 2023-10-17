@@ -9,7 +9,6 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 
 
-
 class EmojiAdapter(private val emojiList: List<Int>, private val onItemClick: (position: Int) -> Unit
 ) : RecyclerView.Adapter<EmojiAdapter.ViewHolder>() {
 
@@ -29,6 +28,8 @@ class EmojiAdapter(private val emojiList: List<Int>, private val onItemClick: (p
         holder.itemView.setOnClickListener {//add a listener
             onItemClick(position)
         }
+
+
     }
 
     override fun getItemCount(): Int {
@@ -50,5 +51,8 @@ class EmojiAdapter(private val emojiList: List<Int>, private val onItemClick: (p
         fun bind(emoji: Int) {
             emojiImageView.setImageResource(emoji)
         }
+
+
     }
+
 }
